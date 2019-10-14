@@ -47,7 +47,6 @@ class PaletteShades extends Component {
                     (format === "rgb" && chroma(bgColor.color).css()) ||
                     (format === "rgba" && chroma(bgColor.color).alpha(0.9).css())                                                             
                 }
-                // onCopy = {onCopy}
                 format = {format}
                 key = {bgColor.name}
                 id={bgColor.id}
