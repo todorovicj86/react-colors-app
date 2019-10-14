@@ -18,12 +18,7 @@ class ColorPalette extends Component {
             shadeLevel: 500,
 
         }
-        this.handleCopy = this.handleCopy.bind(this)
         this.changeShade = this.changeShade.bind(this)
-    }
-
-    handleCopy(evt){
-       this.props.onCopy(true)
     }
 
     changeShade(shadeLevel){
@@ -41,7 +36,6 @@ class ColorPalette extends Component {
                 bgColor = {color[format]}
                 colorName = {color.name}
                 key={color.name}
-                onCopy = {this.handleCopy}
                 format = {format}
                 paletteId = {palette.id}
                 id={color.id}
