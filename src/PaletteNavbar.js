@@ -17,7 +17,7 @@ class PaletteNavbar extends Component {
     constructor(props){
         super(props);
         this.state={
-            value: 500,
+            levelValue: 500,
             open: false,
         }
           
@@ -36,7 +36,7 @@ class PaletteNavbar extends Component {
     handleShadeChange(value){
         this.props.changeShade(value);
         this.setState({
-            value: value,
+            levelValue: value,
         })
         
     }
@@ -45,7 +45,7 @@ class PaletteNavbar extends Component {
     }
 
     render(){
-        const {value, open} = this.state;
+        const {levelValue, open} = this.state;
         const {format, classes, hiddenSlider} = this.props;
         return(
             <div className={classes.PaletteNavbar}>
@@ -57,12 +57,12 @@ class PaletteNavbar extends Component {
               
                     <div className={ `${classes.sliderContainer} ${hiddenSlider && classes.hidden}`}>
                         <span className={classes.sliderLegend}>
-                            Level: [{value}]
+                            Level: [{levelValue}]
                         </span>
                         
                         <div className={classes.slider}>
                             <Slider 
-                                defaultValue={value}
+                                defaultValue={levelValue}
                                 step={100}
                                 min={100}
                                 max={900}
