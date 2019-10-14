@@ -23,7 +23,7 @@ class MakeNewPalette extends Component {
   constructor(props){
       super(props);
       this.state = {
-        open: true,
+        openDrawer: true,
         colors: seedColors[0].colors,
         id:"",
         emoji:"",
@@ -39,11 +39,11 @@ class MakeNewPalette extends Component {
 
    
   handleDrawerOpen = () => {
-    this.setState({open: true});
+    this.setState({openDrawer: true});
   };
 
   handleDrawerClose = () => {
-    this.setState({open: false});
+    this.setState({openDrawer: false});
   };
 
 
@@ -111,14 +111,14 @@ class MakeNewPalette extends Component {
 
     render(){
         const {classes, maxColors, palettes} = this.props;
-        const {open, colors} = this.state;
+        const {openDrawer, colors} = this.state;
         const paletteIsFull = colors.length >= maxColors;
 
         return(
             <div className={classes.root} >
                 
                 <FormNavbar 
-                  open = {open}
+                  open = {openDrawer}
                   handleDrawerOpen = {this.handleDrawerOpen}
                   savePalette = {this.savePalette}
                   palettes = {palettes}
@@ -128,7 +128,7 @@ class MakeNewPalette extends Component {
                   className={classes.drawer}
                   variant="persistent"
                   anchor="left"
-                  open={open}
+                  open={openDrawer}
                   classes={{
                       paper: classes.drawerPaper,
                   }}
@@ -170,7 +170,7 @@ class MakeNewPalette extends Component {
                 </Drawer>
 
                 <main className={classNames(classes.content, {
-                        [classes.contentShift]: open,
+                        [classes.contentShift]: openDrawer,
                     })}
                 >
                 <div className={classes.drawerHeader} />
