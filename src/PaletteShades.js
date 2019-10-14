@@ -18,7 +18,7 @@ class PaletteShades extends Component {
     getShades(){
         let shadeObj =[]
         const baseColor = this.props.color.color;
-        console.log(baseColor)
+        // console.log(baseColor)
         const name = this.props.color.name;
         const darkestShade = chroma(baseColor).darken(4);
         const brightestShade = chroma(baseColor).brighten(2.6)
@@ -37,7 +37,7 @@ class PaletteShades extends Component {
 
     render(){
         const shades = this.getShades();
-        const {format, handleFormat, palette, onCopy, classes, showingFullPalette} = this.props;
+        const {format, handleFormat, palette, classes, showingFullPalette} = this.props;
        
         const colorShades = shades.map(bgColor => (
             <ColorBox 
@@ -47,7 +47,7 @@ class PaletteShades extends Component {
                     (format === "rgb" && chroma(bgColor.color).css()) ||
                     (format === "rgba" && chroma(bgColor.color).alpha(0.9).css())                                                             
                 }
-                onCopy = {onCopy}
+                // onCopy = {onCopy}
                 format = {format}
                 key = {bgColor.name}
                 id={bgColor.id}
