@@ -10,9 +10,6 @@ import Page from './Page'
 import {getPaletteShades} from './helpers'
 
 class Routes extends Component {
-    static defaultProps = {
-        marks: {50: "50", 100: "100", 200: "200", 300: "300", 400: "400", 500: "500", 600: "600", 700: "700", 800: "800", 900: "900"}
-    }
       constructor(props){
         super(props);
         this.state = {
@@ -81,7 +78,6 @@ class Routes extends Component {
                 palette={getPaletteShades(currentPalette)} 
                 format={this.state.format} 
                 handleFormat = {this.handleFormat}
-                sliderMarks = {this.props.marks}
                 />
             </Page>
           )
