@@ -49,7 +49,7 @@ class FormNavbar extends Component{
   }
 
     render(){
-        const {classes, open, palettes} = this.props;
+        const {classes, open, palettes, handleDrawerOpen, savePalette} = this.props;
         const { openModal, openEmoji } = this.state;
    
         return(
@@ -66,7 +66,7 @@ class FormNavbar extends Component{
                       <IconButton
                           color="inherit"
                           aria-label="open drawer"
-                          onClick={this.props.handleDrawerOpen}
+                          onClick={handleDrawerOpen}
                           edge="start"
                           className={classNames(classes.menuButton, open && classes.hide)}
                       >
@@ -96,7 +96,7 @@ class FormNavbar extends Component{
               <ModalDialog 
                 openModal={openModal}
                 cancelSave={this.cancelSave}
-                savePalette = {this.props.savePalette}
+                savePalette = {savePalette}
                 palettes={palettes}
                 openEmoji = {openEmoji}
                 openEmojiModal={this.openEmojiModal}
