@@ -29,7 +29,7 @@ class ColorPalette extends Component {
 
     render(){
 
-        const {palette, format, sliderMarks,handleFormat, classes, showingFullPalette} = this.props;
+        const {palette, format,handleFormat, classes, showingFullPalette} = this.props;
         const {shadeLevel} = this.state;
         const colorBoxes = palette.colors[shadeLevel].map (color => (
             <ColorBox 
@@ -50,7 +50,6 @@ class ColorPalette extends Component {
                     <PaletteNavbar 
                         handleFormat = {handleFormat} 
                         format = {format} 
-                        marks = {sliderMarks}
                         changeShade = {this.changeShade}
                         hiddenSlider = {false}
                         showingFullPalette={showingFullPalette}
