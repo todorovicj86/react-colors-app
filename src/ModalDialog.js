@@ -10,8 +10,6 @@ class ModalDialog extends Component {
         super(props);
         this.state = {
             paletteName: "",
-            emoji:"",
-            openEmoji: false,
         }
 
         this.handleChange = this.handleChange.bind(this)
